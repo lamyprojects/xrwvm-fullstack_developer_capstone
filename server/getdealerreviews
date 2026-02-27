@@ -1,0 +1,22 @@
+curl -X GET http://localhost:8000/djangoapp/getreviews/1 \
+-H "Content-Type: application/json"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 412
+
+[
+  {
+    "id": 1,
+    "dealer": 1,
+    "name": "admin",
+    "review": "Excellent customer service and smooth purchase process.",
+    "purchase": true,
+    "purchase_date": "2024-10-12",
+    "car_make": "Toyota",
+    "car_model": "Camry",
+    "car_year": 2023,
+    "sentiment": "positive"
+  }
+]
+
