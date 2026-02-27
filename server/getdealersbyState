@@ -1,0 +1,29 @@
+curl -X GET "http://localhost:8000/djangoapp/getdealers?state=KS" \
+-H "Content-Type: application/json"
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 468
+
+[
+  {
+    "id": 4,
+    "name": "Best Cars Kansas City",
+    "city": "Kansas City",
+    "state": "KS",
+    "address": "101 Prairie View Rd, Kansas City, KS 66101",
+    "zip": "66101",
+    "phone": "913-555-2211",
+    "email": "kansascity@bestcarsdealership.com"
+  },
+  {
+    "id": 5,
+    "name": "Best Cars Wichita",
+    "city": "Wichita",
+    "state": "KS",
+    "address": "500 Sunflower Ave, Wichita, KS 67202",
+    "zip": "67202",
+    "phone": "316-555-3344",
+    "email": "wichita@bestcarsdealership.com"
+  }
+]
