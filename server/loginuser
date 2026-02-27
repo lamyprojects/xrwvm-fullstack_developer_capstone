@@ -4,9 +4,9 @@ curl -X POST http://localhost:8000/djangoapp/login \
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 85
+Content-Length: 120
 
 {
   "username": "admin",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampletoken123456789"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIn0.dummysignature123456789"
 }
