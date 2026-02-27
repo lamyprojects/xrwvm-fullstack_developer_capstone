@@ -1,0 +1,36 @@
+curl http://localhost:8000/getallcarmakes
+
+[
+  {
+    "id": 1,
+    "name": "Toyota",
+    "models": [
+      {
+        "id": 1,
+        "name": "Corolla",
+        "year": 2023
+      },
+      {
+        "id": 2,
+        "name": "Camry",
+        "year": 2022
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "BMW",
+    "models": [
+      {
+        "id": 3,
+        "name": "X5",
+        "year": 2023
+      },
+      {
+        "id": 4,
+        "name": "X3",
+        "year": 2022
+      }
+    ]
+  }
+]
