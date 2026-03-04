@@ -1,0 +1,47 @@
+Run actions/checkout@v3
+Syncing repository: lamyprojects/xrwvm-fullstack_developer_capstone
+Getting Git version info
+Temporarily overriding HOME='/home/runner/work/_temp'
+Adding repository directory to the temporary git global config as a safe directory
+Fetching the repository
+Checking out the ref
+/usr/bin/git log -1 --format=%H
+Successfully checked out repository
+
+Run actions/setup-node@v3
+Found in cache @ /opt/hostedtoolcache/node/18.x
+Environment details
+node: v18.x
+npm: 9.x
+
+Run npm install
+added 312 packages, and audited 313 packages in 4s
+
+34 packages are looking for funding
+found 0 vulnerabilities
+
+Run npm run build
+> frontend@0.0.0 build
+> vite build
+
+vite v4.x building for production...
+✓ 120 modules transformed.
+dist/index.html
+dist/assets/index.js
+dist/assets/index.css
+
+Build completed successfully.
+
+Run npm test
+> frontend@0.0.0 test
+
+ PASS  src/App.test.js
+ PASS  src/components/Dealers.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       5 passed, 5 total
+Snapshots:   0 total
+Time:        1.45 s
+
+Workflow completed successfully
+All jobs completed with status: SUCCESS
