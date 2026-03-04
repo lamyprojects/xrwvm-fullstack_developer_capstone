@@ -1,17 +1,14 @@
-curl -X GET http://localhost:8000/djangoapp/getdealer/1 \
--H "Content-Type: application/json"
-
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 312
-
+curl -X GET "http://localhost:8000/fetchDealer/1"
 {
   "id": 1,
-  "name": "Best Cars New York",
+  "full_name": "Best Cars New York",
+  "short_name": "Best Cars NY",
   "city": "New York",
   "state": "NY",
   "address": "123 Manhattan Ave, New York, NY 10001",
   "zip": "10001",
   "phone": "212-555-1234",
-  "email": "ny@bestcarsdealership.com"
+  "email": "ny@bestcarsdealership.com",
+  "latitude": 40.7128,
+  "longitude": -74.0060
 }

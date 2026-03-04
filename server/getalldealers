@@ -1,34 +1,36 @@
-curl -X GET http://localhost:8000/djangoapp/getdealers \
--H "Content-Type: application/json"
-
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 842
-
+curl -X GET "http://localhost:8000/fetchDealers"
 [
   {
     "id": 1,
-    "name": "Best Cars New York",
+    "full_name": "Best Cars New York",
+    "short_name": "Best Cars NY",
     "city": "New York",
     "state": "NY",
     "address": "123 Manhattan Ave, New York, NY 10001",
-    "zip": "10001"
+    "zip": "10001",
+    "latitude": 40.7128,
+    "longitude": -74.0060
   },
   {
     "id": 2,
-    "name": "Best Cars California",
+    "full_name": "Best Cars California",
+    "short_name": "Best Cars CA",
     "city": "Los Angeles",
     "state": "CA",
     "address": "456 Sunset Blvd, Los Angeles, CA 90001",
-    "zip": "90001"
+    "zip": "90001",
+    "latitude": 34.0522,
+    "longitude": -118.2437
   },
   {
     "id": 3,
-    "name": "Best Cars Texas",
+    "full_name": "Best Cars Texas",
+    "short_name": "Best Cars TX",
     "city": "Houston",
     "state": "TX",
     "address": "789 Main Street, Houston, TX 77001",
-    "zip": "77001"
+    "zip": "77001",
+    "latitude": 29.7604,
+    "longitude": -95.3698
   }
 ]
-
