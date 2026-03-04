@@ -1,3 +1,6 @@
-]633;E;echo 'curl "http://localhost:8000/djangoapp/analyze?text=Fantastic%20services"';da2081fc-15f7-4e60-812e-093f187e2085]633;Ccurl "http://localhost:8000/djangoapp/analyze?text=Fantastic%20services"
+curl -X GET "http://localhost:8000/analyze/Fantastic%20services"
 
-{"sentiment": "positive", "text": "Fantastic services"}
+{
+  "text": "Fantastic services",
+  "sentiment": "positive"
+}
