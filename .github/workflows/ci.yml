@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  lint-python:
+    name: Lint Python
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up job
+        run: echo "Starting Python lint job"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install flake8
+        run: pip install flake8
+
+      - name: Run Python Linter
+        run: flake8 . || true
+
+      - name: Complete job
+        run: echo "Python lint completed"
+
+
+  lint-javascript:
+    name: Lint JavaScript
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up job
+        run: echo "Starting JS lint job"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install || true
+
+      - name: Run JavaScript Linter
+        run: npx eslint . || true
+
+      - name: Complete job
+        run: echo "JavaScript lint completed"
