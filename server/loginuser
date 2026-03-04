@@ -1,2 +1,2 @@
-]633;E;echo 'curl -X POST "http://localhost:8000/djangoapp/login" -H "Content-Type: application/json" -d '"'"'{"userName":"admin","password":"password123"}'"'"'';94775717-0010-4560-9c7d-8df03612f55e]633;Ccurl -X POST "http://localhost:8000/djangoapp/login" -H "Content-Type: application/json" -d '{"userName":"admin","password":"password123"}'
-{"userName": "admin", "status": "Unauthorized"}
+]633;E;echo 'curl -X POST "http://localhost:8000/djangoapp/login" -H "Content-Type: application/json" -d '"'"'{"userName":"admin","password":"Hajde1234"}'"'"'';94775717-0010-4560-9c7d-8df03612f55e]633;Ccurl -X POST "http://localhost:8000/djangoapp/login" -H "Content-Type: application/json" -d '{"userName":"admin","password":"Hajde1234"}'
+{"userName": "admin", "status": "Authenticated"}
