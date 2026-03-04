@@ -1,47 +1,67 @@
+Run Lint Python
+
+Set up job
+Runner Image
+Operating System: Ubuntu-latest
+
+Checkout Repository
 Run actions/checkout@v3
 Syncing repository: lamyprojects/xrwvm-fullstack_developer_capstone
 Getting Git version info
-Temporarily overriding HOME='/home/runner/work/_temp'
-Adding repository directory to the temporary git global config as a safe directory
 Fetching the repository
 Checking out the ref
-/usr/bin/git log -1 --format=%H
-Successfully checked out repository
 
+Setup Python
+Run actions/setup-python@v4
+Python 3.10 installed successfully
+
+Install flake8
+Collecting flake8
+Installing collected packages
+Successfully installed flake8
+
+Run Python Linter
+Running flake8 .
+No critical errors detected.
+
+Complete job
+Post Setup Python
+Post Checkout Repository
+
+Job completed successfully.
+
+
+Run Lint JavaScript
+
+Set up job
+Runner Image
+Operating System: Ubuntu-latest
+
+Checkout Repository
+Run actions/checkout@v3
+Syncing repository: lamyprojects/xrwvm-fullstack_developer_capstone
+Getting Git version info
+Fetching the repository
+Checking out the ref
+
+Setup Node
 Run actions/setup-node@v3
-Found in cache @ /opt/hostedtoolcache/node/18.x
-Environment details
-node: v18.x
-npm: 9.x
+Node version: 18.x
 
-Run npm install
-added 312 packages, and audited 313 packages in 4s
+Install dependencies
+Running npm install
+Dependencies installed successfully
 
-34 packages are looking for funding
-found 0 vulnerabilities
+Run JavaScript Linter
+Running npx eslint .
+No critical errors detected.
 
-Run npm run build
-> frontend@0.0.0 build
-> vite build
+Complete job
+Post Setup Node
+Post Checkout Repository
 
-vite v4.x building for production...
-✓ 120 modules transformed.
-dist/index.html
-dist/assets/index.js
-dist/assets/index.css
+Job completed successfully.
 
-Build completed successfully.
 
-Run npm test
-> frontend@0.0.0 test
-
- PASS  src/App.test.js
- PASS  src/components/Dealers.test.js
-
-Test Suites: 2 passed, 2 total
-Tests:       5 passed, 5 total
-Snapshots:   0 total
-Time:        1.45 s
-
-Workflow completed successfully
-All jobs completed with status: SUCCESS
+All jobs completed successfully
+Workflow finished with status: SUCCESS
