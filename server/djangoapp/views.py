@@ -2,7 +2,7 @@ import json
 import logging
 
 from django.http import JsonResponse
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_exempt
 
 logger = logging.getLogger(__name__)
@@ -13,15 +13,18 @@ def login_user(request):
     """
     Login endpoint used by the project frontend.
     Expects JSON body: {"userName": "...", "password": "..."}
+    Returns: {"userName": "...", "status": "Authenticated"} on success
     """
     try:
         data = json.loads(request.body or "{}")
         username = data.get("userName")
         password = data.get("password")
+
         if not username or not password:
             return JsonResponse({"error": "userName and password are required"}, status=400)
 
         user = authenticate(username=username, password=password)
+
         if user is not None:
             login(request, user)
             return JsonResponse({"userName": username, "status": "Authenticated"})
@@ -31,6 +34,18 @@ def login_user(request):
     except Exception as e:
         logger.exception("login_user error")
         return JsonResponse({"error": str(e)}, status=500)
+
+
+def logout_user(request):
+    """
+    Task 6: Logout endpoint.
+    Must be called with GET:
+      GET /djangoapp/logout
+    Must return:
+      {"userName": ""}
+    """
+    logout(request)
+    return JsonResponse({"userName": ""})
 
 
 def analyze_review(request):
@@ -43,7 +58,6 @@ def analyze_review(request):
     if not text:
         return JsonResponse({"error": "text query parameter is required"}, status=400)
 
-    # Simple deterministic sentiment logic (enough for the lab task)
     t = text.lower()
     positive_words = ["fantastic", "great", "excellent", "amazing", "good", "awesome", "love"]
     negative_words = ["bad", "terrible", "awful", "poor", "hate", "worst"]
